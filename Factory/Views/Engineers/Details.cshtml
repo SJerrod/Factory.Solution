@@ -24,7 +24,7 @@ else
       @using (Html.BeginForm("DeleteEngineer", "Engineers"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
-        <input type="submit" value="Delete" />
+        <button type="submit"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Remove Qualification</button>
       }
     } 
   }
