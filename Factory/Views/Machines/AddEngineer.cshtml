@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Add an Engineer</h2>
+
+<h4>Add an Engineer thats licensed to Operate the @Html.DisplayFor(model => model.Name):</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MachineId)
+  @Html.Label("Select Engineer")
+  @Html.DropDownList("EngineerId")
+
+  <input type="submit" value="Save" />
+}
+<button onclick="window.history.back()"><span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Back</button>
