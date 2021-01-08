@@ -7,6 +7,23 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+        <button type="button" class="btn btn-dark">
+            <span class="glyphicon glyphicon-home" aria-hidden="true"></span><li>@Html.ActionLink("Home", "Index", "Home")</li>
+          </button>
+          
+          <button type="button" class="btn btn-dark">
+            <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><li>@Html.ActionLink("See all Engineers", "Index", "Engineers")</li>
+          </button>
+          
+          <button type="button" class="btn btn-dark">
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span><li>@Html.ActionLink("See all Machines", "Index", "Machines")</li>
+          </button>
+        </ul>
+      </div>
+    </nav>
     @RenderBody()
   </body>
 </html>
