@@ -15,11 +15,11 @@
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
-  @* {
+@* {
     int cnt = 0;
 
-    <p>Availible Styles:</p>
-    foreach (var style in ViewBag.Styles)
+    <p>Machines Availible:</p>
+    foreach (var machine in ViewBag.Machines)
     {
       if (cnt++ % 3 == 0)
       {
@@ -27,10 +27,10 @@
       }
       @:<td>
         <input type="checkbox"
-            name="styles"
-            value="@style.StyleId"
-            @(Html.Raw(style.Owned ? "checked=\"checked\"" : "")) />
-            @style.Name
+            name="machines"
+            value="@machine.MachineId"
+            @(Html.Raw(machine.Owned ? "checked=\"checked\"" : "")) />
+            @machine.Name
       @:</td>
     }
     @:</tr>
