@@ -1,6 +1,6 @@
 # _Factory_
 
-#### _Many to Many Database Relationship Practice for Epicodus_ 
+#### _Many to Many Database Relationship Project for Epicodus_ 
 #### _DATE 01.08.2021_
 
 #### By _**Jerrod Styrk**_
@@ -21,12 +21,12 @@ Software Requirements
 Open by Downloading or Cloning
 - [Click to view Github repository](https://github.com/SJerrod/Factory.Solution.git) Or simply paste the following url into your prefered browser https://github.com/SJerrod/Factory.Solution.git
 - To Clone repository simply click the green Code button and copy the url.
-- Using a prefered terminal use the command 'git clone paste-url-here' in which ever directory you wish.
+- Using a prefered terminal use the command `git clone paste-url-here` in which ever directory you wish.
 - Open the newly cloned repo with your text editor.
-- In the terminal run command 'cd Factory'
-- In the terminal run command 'dotnet restore'
-- In the terminal run command 'dotnet build'
-- In the terminal run command 'dotnet run'
+- In the terminal run command `cd Factory`
+- In the terminal run command `dotnet restore`
+- In the terminal run command `dotnet build`
+- In the terminal run command `dotnet run`
 
 AppSettings
 * This project requires an AppSettings file. Create your `appsettings.json` file in the main `Factory` directory. 
@@ -65,12 +65,12 @@ CREATE TABLE `EngineerMachine` (
 ) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 CREATE TABLE `engineers` (
   `EngineerId` int NOT NULL AUTO_INCREMENT,
-  `Name` longtext,
+  `Name` varchar,
   PRIMARY KEY (`EngineerId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 CREATE TABLE `machines` (
   `MachineId` int NOT NULL AUTO_INCREMENT,
-  `Name` longtext,
+  `Name` varchar,
   PRIMARY KEY (`MachineId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -83,7 +83,8 @@ SQL Database Design
 
 ## Known Bugs
 
-This application has no known bugs. 
+* You can assign the same machine to an engineer more then once
+* You can assign an engineer to the same machine more then once
 
 ## Support and contact details
 
