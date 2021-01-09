@@ -11,9 +11,26 @@
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
-  @Html.Label("Select Machine")
-  @Html.DropDownList("MachineId")
+  {
+    int cnt = 0;
 
+    <p>Machines Availible:</p>
+    foreach (var machine in ViewBag.Machines)
+    {
+      if (cnt++ % 3 == 0)
+      {
+        @:</tr><tr>
+      }
+      @:<td>
+        <input type="checkbox"
+            name="machines"
+            value="@machine.MachineId"
+            @(Html.Raw(machine.Owned ? "checked=\"checked\"" : "")) />
+            @machine.Name
+      @:</td>
+    }
+    @:</tr>
+  }
   <input type="submit" value="Save" />
 }
 <button onclick="window.history.back()"><span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Back</button>

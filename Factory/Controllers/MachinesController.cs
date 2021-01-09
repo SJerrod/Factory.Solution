@@ -47,30 +47,18 @@ namespace Factory.Controllers
         {
             var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
             ViewBag.Engineers = _db.Engineers.ToList();
-            // ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
             return View(thisMachine);
         }
 
-        // [HttpPost]
-        // public ActionResult Edit(Machine machine, int EngineerId)
-        // {
-        //     if (EngineerId != 0)
-        //     {
-        //         _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = EngineerId, MachineId = machine.MachineId }); 
-        //     }
-        //     _db.Entry(machine).State = EntityState.Modified;
-        //     _db.SaveChanges();
-        //     return RedirectToAction("Index");
-        // }
         [HttpPost]
         public ActionResult Edit(Machine machine, List<int> engineers)
         {
             if (engineers.Count != 0)
             {
-              foreach (int engineer in engineers)
-              {
-                  _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = engineer, MachineId = machine.MachineId }); 
-              }
+                foreach (int engineer in engineers)
+                {
+                    _db.EngineerMachine.Add(new EngineerMachine() { EngineerId = engineer, MachineId = machine.MachineId }); 
+                }
             }
             _db.Entry(machine).State = EntityState.Modified;
             _db.SaveChanges();
@@ -97,17 +85,17 @@ namespace Factory.Controllers
 
         public ActionResult Delete(int id)
         {
-          var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-          return View(thisMachine);
+            var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+            return View(thisMachine);
         }
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-          var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-          _db.Machines.Remove(thisMachine);
-          _db.SaveChanges();
-          return RedirectToAction("Index");
+            var thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+            _db.Machines.Remove(thisMachine);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         [HttpPost]

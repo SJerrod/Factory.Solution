@@ -14,27 +14,7 @@
 
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
-
-@* {
-    int cnt = 0;
-
-    <p>Machines Availible:</p>
-    foreach (var machine in ViewBag.Machines)
-    {
-      if (cnt++ % 3 == 0)
-      {
-        @:</tr><tr>
-      }
-      @:<td>
-        <input type="checkbox"
-            name="machines"
-            value="@machine.MachineId"
-            @(Html.Raw(machine.Owned ? "checked=\"checked\"" : "")) />
-            @machine.Name
-      @:</td>
-    }
-    @:</tr>
-  } *@
+  
   <button type="submit"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> Save Changes</button>
 }
 <button onclick="window.history.back()"><span class="glyphicon glyphicon-backward" aria-hidden="true"></span> Back</button>
